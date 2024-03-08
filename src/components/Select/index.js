@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useState } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 import "./style.scss";
 
@@ -13,12 +13,18 @@ const Select = ({
   label,
   type = "normal",
 }) => {
-  const [value, setValue] = useState();
+  // Const value et setValue pour initialiser la valeur sélectionnée.
+  const [value, setValue] = useState(null);
+
   const [collapsed, setCollapsed] = useState(true);
+
   const changeValue = (newValue) => {
-    onChange();
+    // Ajout de la condition pour appeler la fonction onChange lors de la sélection d'une catégorie.
+    onChange(newValue);
     setValue(newValue);
-    setCollapsed(newValue);
+
+    // Réinitialisation de la valeur sélectionnée lors de la fermeture de la liste déroulante.
+    setCollapsed(!collapsed);
   };
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
@@ -88,7 +94,7 @@ Select.propTypes = {
   titleEmpty: PropTypes.bool,
   label: PropTypes.string,
   type: PropTypes.string,
-}
+};
 
 Select.defaultProps = {
   onChange: () => null,
@@ -96,6 +102,6 @@ Select.defaultProps = {
   label: "",
   type: "normal",
   name: "select",
-}
+};
 
 export default Select;
