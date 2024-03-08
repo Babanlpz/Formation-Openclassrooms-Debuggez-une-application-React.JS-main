@@ -4,7 +4,11 @@ import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
-const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000); })
+// Remplacement de la valeur 1000 par 900 pour la fonction mockContactApi.
+const mockContactApi = () =>
+  new Promise((resolve) => {
+    setTimeout(resolve, 900);
+  });
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
@@ -16,6 +20,8 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        // Ajout de la fonction onSuccess pour afficher le message de succès.
+        onSuccess();
       } catch (err) {
         setSending(false);
         onError(err);
@@ -56,11 +62,11 @@ const Form = ({ onSuccess, onError }) => {
 Form.propTypes = {
   onError: PropTypes.func,
   onSuccess: PropTypes.func,
-}
+};
 
 Form.defaultProps = {
   onError: () => null,
   onSuccess: () => null,
-}
+};
 
 export default Form;
