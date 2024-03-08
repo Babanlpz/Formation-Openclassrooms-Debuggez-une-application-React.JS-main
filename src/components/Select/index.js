@@ -15,7 +15,6 @@ const Select = ({
 }) => {
   // Const value et setValue pour initialiser la valeur sélectionnée.
   const [value, setValue] = useState(null);
-
   const [collapsed, setCollapsed] = useState(true);
 
   const changeValue = (newValue) => {
