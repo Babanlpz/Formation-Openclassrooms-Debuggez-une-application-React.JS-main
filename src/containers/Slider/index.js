@@ -8,19 +8,28 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    // Inversement des valeurs dans la condition, initialement -1 et 1 pour avoir un ordre croissant.
-    new Date(evtA.date) < new Date(evtB.date) ? 1 : -1
+    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
-
-  // Ajout d'une constante pour initialiser l'indice dans notre tableau pour la partie focus.
-  const imgFocus = data?.focus.length;
-
   const nextCard = () => {
-    setTimeout(() => setIndex(index < imgFocus - 1 ? index + 1 : 0), 5000);
+    // setTimeout(
+    //   () => setIndex(index < byDateDesc.length ? index + 1 : 0),
+    //   5000
+    // );
+
+    // Ajout d'une vérification pour s'assurer que byDateDesc n'est pas undefined
+    if (byDateDesc !== undefined) {
+      setTimeout(
+        // Ajout d'un -1 pour éviter de dépasser la limite de la longueur du tableau
+        () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
+        5000
+      );
+    }
   };
+  // Utilisation de useEffect pour lancer la fonction nextCard lorsque le composant est monté
   useEffect(() => {
     nextCard();
   });
+
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (

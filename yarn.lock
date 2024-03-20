@@ -6168,10 +6168,10 @@ node-releases@^2.0.3:
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.3.tgz"
   integrity sha512-maHFz6OLqYxz+VQyCAtA3PTX4UP/53pa05fyDNc9CwjvJ0yEh6+xBwKsgCxMNhS8taUKBFYxfuiaD9U/55iFaw==
 
-node@^21.7.0:
-  version "21.7.0"
-  resolved "https://registry.npmjs.org/node/-/node-21.7.0.tgz"
-  integrity sha512-US/zylqBR4D2cl8PRe30DzgzMhkcCtl4pb1E7GZbwRm444/TQBPxDOTzxGztlqLBgZVnWfl2U7g908XgUah+3A==
+node@^21.7.1:
+  version "21.7.1"
+  resolved "https://registry.npmjs.org/node/-/node-21.7.1.tgz"
+  integrity sha512-j6NFfbKy3DBuaJh2X8lRZmS59oLr2XRtt0rTa9VsFj3ZcGbeK7xp40gZaI92AqNuRv1aL5dRueNqL6YuZFcjJg==
   dependencies:
     node-bin-setup "^1.0.0"
 
@@ -9073,10 +9073,10 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-yarn@^1.22.21:
-  version "1.22.21"
-  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.21.tgz"
-  integrity sha512-ynXaJsADJ9JiZ84zU25XkPGOvVMmZ5b7tmTSpKURYwgELdjucAOydqIOrOfTxVYcNXe91xvLZwcRh68SR3liCg==
+yarn@^1.22.22:
+  version "1.22.22"
+  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.22.tgz"
+  integrity sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==
 
 yocto-queue@^0.1.0:
   version "0.1.0"

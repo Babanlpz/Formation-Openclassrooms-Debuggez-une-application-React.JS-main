@@ -13,10 +13,13 @@ const Select = ({
   label,
   type = "normal",
 }) => {
+  // Ajout de la valeur sélectionnée pour la liste déroulante.
   // Const value et setValue pour initialiser la valeur sélectionnée.
+  // Const collapsed et setCollapsed pour initialiser l'état de la liste déroulante.
   const [value, setValue] = useState(null);
   const [collapsed, setCollapsed] = useState(true);
 
+  // Ajout de la fonction changeValue pour changer la valeur sélectionnée.
   const changeValue = (newValue) => {
     // Ajout de la condition pour appeler la fonction onChange lors de la sélection d'une catégorie.
     onChange(newValue);

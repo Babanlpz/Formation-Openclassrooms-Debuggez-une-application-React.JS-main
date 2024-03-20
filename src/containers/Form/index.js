@@ -1,8 +1,8 @@
-import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
+import { useCallback, useState } from "react";
+import Button, { BUTTON_TYPES } from "../../components/Button";
 import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
-import Button, { BUTTON_TYPES } from "../../components/Button";
 
 // Remplacement de la valeur 1000 par 900 pour la fonction mockContactApi.
 const mockContactApi = () =>
@@ -16,7 +16,8 @@ const Form = ({ onSuccess, onError }) => {
     async (evt) => {
       evt.preventDefault();
       setSending(true);
-      // We try to call mockContactApi
+      // Ajout de la fonction try/catch pour gérer les erreurs lors de l'envoi du formulaire.
+      // Ajout de la fonction await pour attendre la fin de l'appel à mockContactApi.
       try {
         await mockContactApi();
         setSending(false);
