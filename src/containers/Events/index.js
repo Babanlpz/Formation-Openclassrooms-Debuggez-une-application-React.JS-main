@@ -26,6 +26,12 @@ const EventList = () => {
   //   }
   //   return false;
   // });
+
+  // const changeType = (evtType) => {
+  //   setCurrentPage(1);
+  //   setType(evtType);
+  // };
+
   // Filtrage des événements en fonction du type d'événement sélectionné
   const filteredEventsByType =
     (type
@@ -38,12 +44,7 @@ const EventList = () => {
     currentPage * PER_PAGE
   );
 
-  // const changeType = (evtType) => {
-  //   setCurrentPage(1);
-  //   setType(evtType);
-  // };
   // Fonction pour changer le type d'événement sélectionné
-  // et réinitialiser la page actuelle à 1
   const changeType = (evtType) => {
     // Réinitialiser la page actuelle à 1 lorsque le type change
     setCurrentPage(1);

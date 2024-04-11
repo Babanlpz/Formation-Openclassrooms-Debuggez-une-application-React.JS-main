@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { DataProvider, api } from "../../contexts/DataContext";
 import Slider from "./index";
-import { api, DataProvider } from "../../contexts/DataContext";
 
 const data = {
   focus: [
@@ -35,6 +35,8 @@ describe("When slider is created", () => {
         <Slider />
       </DataProvider>
     );
+    // Ajoutez un point d'arrêt ici
+    // debugger;
     await screen.findByText("World economic forum");
     await screen.findByText("janvier");
     await screen.findByText(

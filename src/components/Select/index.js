@@ -21,13 +21,16 @@ const Select = ({
 
   // Ajout de la fonction changeValue pour changer la valeur sélectionnée.
   const changeValue = (newValue) => {
+    // debugger; // Point d'arrêt pour vérifier les valeurs
     // Ajout de la condition pour appeler la fonction onChange lors de la sélection d'une catégorie.
     onChange(newValue);
     setValue(newValue);
-
     // Réinitialisation de la valeur sélectionnée lors de la fermeture de la liste déroulante.
     setCollapsed(!collapsed);
   };
+
+  // Juste avant le retour de la fonction Select
+  // debugger; // Point d'arrêt pour vérifier les valeurs
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
       {label && <div className="label">{label}</div>}
