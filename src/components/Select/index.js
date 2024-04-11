@@ -41,10 +41,16 @@ const Select = ({
           </li>
           {!collapsed && (
             <>
+              {/* eslint-disable jsx-a11y/label-has-associated-control */}
               {!titleEmpty && (
                 <li onClick={() => changeValue(null)}>
-                  <input defaultChecked={!value} name="selected" type="radio" />{" "}
-                  Toutes
+                  <input
+                    defaultChecked={!value}
+                    name="selected"
+                    type="radio"
+                    id="select-all" // Ajout de l'ID pour l'élément "Toutes".
+                  />{" "}
+                  <label htmlFor="select-all">Toutes</label>
                 </li>
               )}
               {selection.map((s) => (
@@ -53,14 +59,17 @@ const Select = ({
                     defaultChecked={value === s}
                     name="selected"
                     type="radio"
+                    id={`select-${s}`} // Ajout de l'ID pour chaque élément de la liste déroulante.
                   />{" "}
-                  {s}
+                  <label htmlFor={`select-${s}`}>{s}</label>
                 </li>
               ))}
+              {/* eslint-enable jsx-a11y/label-has-associated-control */}
             </>
           )}
         </ul>
-        <input type="hidden" value={value || ""} name={name} />
+        {/* Pas besoin d'étiquette visible pour un champ caché */}
+        <input type="hidden" value={value || ""} name={name} id="hiddenInput" />
         <button
           type="button"
           data-testid="collapse-button-testid"
